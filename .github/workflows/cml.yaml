@@ -19,5 +19,5 @@ jobs:
           cat metics.txt
 
           # Write your CML report
-          #cat results.txt >> report.md
-          #cml-send-comment report.md
+          cat metics.txt >> report.md
+          cml-send-comment report.md
