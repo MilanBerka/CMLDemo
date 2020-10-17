@@ -15,9 +15,17 @@ jobs:
           pip install -r requirements.txt
           python train.py
 
+          pytest
+
           echo "Model metrics"
           cat metrics.txt
 
           # Write your CML report
-          #cat results.txt >> report.md
-          #cml-send-comment report.md
+          cat metrics.txt >> report.md
+          cml-send-comment report.md
+      - name: Uploading the metrics file
+        uses: actions/upload-artifact@v2
+        with:
+          name: Model metrics
+          path: metrics.txt
+
