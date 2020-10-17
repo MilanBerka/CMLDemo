@@ -19,5 +19,5 @@ jobs:
           cat metrics.txt
 
           # Write your CML report
-          cat metics.txt >> report.md
+          cat metrics.txt >> report.md
           cml-send-comment report.md
